@@ -2,4 +2,12 @@ Nodes: Node is an executable that uses ROS to communicate with other nodes
 
 Topics: Nodes can publish messages to a topic as well as subscribe to a topic to receive messages
 
-Messages" ROS data type that is used when subscribing or publishing to a topic
+Messages: ROS data type that is used when subscribing or publishing to a topic
+
+roscore is the first thing to run when using ROS
+
+rosnode list to see the ROS nodes that are currently running
+
+rosnode info <node_name> to see information about a specific node
+
+rosrun <package-name> <node-name>
