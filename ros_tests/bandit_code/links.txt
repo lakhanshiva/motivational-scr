@@ -1,0 +1,14 @@
+Bandit:
+https://github.com/ankonzoid/LearningX/tree/master/classical_RL/MAB
+
+
+ROS:
+For making the talker listener UI for ROS
+http://wiki.ros.org/webui/Tutorials/Web%20Apps
+
+Ported to git from SVN:
+https://github.com/UNR-RoboticsResearchLab/web_interface
+
+
+
+
