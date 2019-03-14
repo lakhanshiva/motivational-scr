@@ -23,5 +23,7 @@ roscd beginner_tutorials
 rosmsg show Simple
 rossrv show AddTwoInts
 
+4) http://wiki.ros.org/rospy_tutorials/Tutorials/WritingPublisherSubscriber
+
 Robot Decision System:
 Ref1: https://medium.com/kredo-ai-engineering/blog-series-on-ros-ai-ff28cc116560
