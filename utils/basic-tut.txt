@@ -11,3 +11,8 @@ rosnode list to see the ROS nodes that are currently running
 rosnode info <node_name> to see information about a specific node
 
 rosrun <package-name> <node-name>
+
+Creating a catkin workspace
+1) http://wiki.ros.org/catkin/Tutorials/create_a_workspace
+2) http://wiki.ros.org/ROS/Tutorials/CreatingPackage
+
