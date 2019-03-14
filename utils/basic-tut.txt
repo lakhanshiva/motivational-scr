@@ -17,3 +17,11 @@ Creating a catkin workspace
 2) http://wiki.ros.org/ROS/Tutorials/CreatingPackage
 3) http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv
 
+Useful commands
+Package name: beginner_tutorials
+roscd beginner_tutorials
+rosmsg show Simple
+rossrv show AddTwoInts
+
+Robot Decision System:
+Ref1: https://medium.com/kredo-ai-engineering/blog-series-on-ros-ai-ff28cc116560
