@@ -15,4 +15,5 @@ rosrun <package-name> <node-name>
 Creating a catkin workspace
 1) http://wiki.ros.org/catkin/Tutorials/create_a_workspace
 2) http://wiki.ros.org/ROS/Tutorials/CreatingPackage
+3) http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv
 
