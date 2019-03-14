@@ -1,2 +1,2 @@
-
+beginner_tutorials
 -DCATKIN_DEVEL_PREFIX=/home/lakhanshiva/motivational-scr/mscr_ws/devel -DCMAKE_INSTALL_PREFIX=/home/lakhanshiva/motivational-scr/mscr_ws/install -G Unix Makefiles

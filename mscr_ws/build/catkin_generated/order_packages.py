@@ -2,4 +2,4 @@
 source_root_dir = "/home/lakhanshiva/motivational-scr/mscr_ws/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
-underlay_workspaces = "/opt/ros/melodic".split(';') if "/opt/ros/melodic" != "" else []
+underlay_workspaces = "/home/lakhanshiva/motivational-scr/mscr_ws/devel;/opt/ros/melodic".split(';') if "/home/lakhanshiva/motivational-scr/mscr_ws/devel;/opt/ros/melodic" != "" else []
