@@ -1,0 +1,68 @@
+# 2-armed bandit
+
+import numpy as np
+
+def main():
+
+    class HumanModel:
+        def __init__(self, beta, effort, motivation_level, g, x_i, first_time=True):
+            self.beta = beta
+            self.effort = effort
+            self.motivation = motivation_level
+            if first_time:
+                # When initializing,first time
+                self.x_i = 0
+            else:
+                self.x_i = x_i
+            self.goal = g
+
+    class Env:
+        def __init__(self, human, roboparam, alpha):
+            self.roboparam = roboparam
+            self.alpha = alpha
+
+        def rewardfunction(self, human, env):
+            # if c_i + x_i*g < g then beta*m_i - e*x_i + alpha
+            # else if c_i + x_i*g >= g then beta*m_i*10
+            reward = 0
+            # self.alpha = 5 # Padding - change later
+            if self.roboparam + human.x_i*human.goal < human.goal:
+                reward = human.beta*human.motivation - human.effort*human.x_i + self.alpha
+                return reward
+
+            elif self.roboparam + human.x_i*human.goal >= human.goal:
+                mul_factor = 10
+                reward = human.beta*human.m_i*mul_factor
+                return reward
+
+    class Bandit:
+
+        def __init__(self, bandit_win_prob):
+            self.numbandits = 2 # 2 bandits
+            self.win_prob = bandit_win_prob
+
+    class Agent:
+
+
+        def __init__(self, bandit, epsilon):
+            assert 0. <= epsilon <= 1.0
+            self.epsilon = epsilon
+            self.effectiveness = np.zeros(bandit.numbandits, dtype=np.float)
+
+        def sample_intervention(self, bandit, explore_default=False):
+            choice = np.random.random()
+            if (choice <self.epsilon) or explore_default:
+                intervention = np.random.randint(bandit.numbandits)
+                return intervention
+            else:
+                # choose intervention with best win prob
+                intervention = max(range(self.bandit.numbandits), key=lambda x:self.effectiveness[x]))
+		return intervention
+
+
+
+
+
+
+
+    
