@@ -1,41 +1,30 @@
-# 2-armed bandit
-
 import numpy as np
-
-def main():
-
-    class Bandit:
-
-        def __init__(self, bandit_win_prob):
-            self.numbandits = 2 # 2 bandits
-            self.win_prob = bandit_win_prob
-
-    class Agent:
+"""
+Two armed bandit
+"""
 
 
-        def __init__(self, bandit, epsilon):
-            assert 0. <= epsilon <= 1.0
-            self.epsilon = epsilon
-            # Intervention effectiveness table
-            self.effectiveness = np.zeros(bandit.numbandits, dtype=np.float)
+class Bandit:
+    def __init__(self, bandit_probs):
+        self.N = len(bandit_probs) # number of bandits
+        self.succ_probs = bandit_probs # Success probabilities
 
-        def sample_intervention(self, bandit, explore_default=False):
-            choice = np.random.random()
-            if (choice <self.epsilon) or explore_default:
-                intervention = np.random.randint(bandit.numbandits)
-                return intervention
-            else:
-                # choose intervention with best win prob
-                intervention = max(range(self.bandit.numbandits), key=lambda x:self.effectiveness[x]))
-		return intervention
+class EpsilonGreedy:
+    def __init__(self, bandit, eps, init_prob = 1.0):
+        self.eps = eps
+        self.k = np.zeros(bandit.N, dtype=np.int) #action counter
+        self.Q = np.zeros(bandit.N, dtype=np.float) #action value
 
-        def update_effectiveness(self):
+    def update_Q(self, action, reward):
+        self.k[action] = self.k[action] + 1; #incr action counter
+        self.Q[action] = self.Q[action] + (1./self.k[action]) * (reward - self.Q[action])
+
+    def get_action(self, bandit):
+        rand = np.random.random() # Returns a float b/w 0 and 1
+        if (rand < self.eps):
+            action_idx = np.random.randint(bandit.N) #explore random arm of bandit
+            return action_idx
+        else:
+            action_idx = np.argmax(self.Q)
             
-
-
-
-
-
-
-
-    
+            return action_idx
