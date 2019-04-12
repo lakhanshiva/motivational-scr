@@ -6,7 +6,7 @@ Two armed bandit
 
 class Bandit:
     def __init__(self, bandit_probs):
-        self.N = len(bandit_probs) # number of bandits
+        self.N = len(bandit_probs) # number of arms of bandit
         self.succ_probs = bandit_probs # Success probabilities
 
 class EpsilonGreedy:
