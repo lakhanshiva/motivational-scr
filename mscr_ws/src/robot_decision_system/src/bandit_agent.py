@@ -1,6 +1,6 @@
 import numpy as np
 """
-Two armed bandit
+Multi armed bandit
 """
 
 
